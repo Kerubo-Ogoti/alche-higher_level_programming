@@ -57,7 +57,8 @@ class Rectangle:
     def __str__(self):
         """Returns a string representing the rectangle with print_symbol."""
         if self.__width == 0 or self.__height == 0:
-            return ""        
+            return "" 
+            
         symbol = str(self.print_symbol)
         rows = [symbol * self.__width for _ in range(self.__height)]
         return "\n".join(rows)
