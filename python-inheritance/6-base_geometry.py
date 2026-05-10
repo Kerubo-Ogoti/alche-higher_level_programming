@@ -14,7 +14,7 @@ class BaseGeometry:
     def area(self):
         """
         This method is a placeholder for calculating the area of a shape.
-        It currently raises an exception because the specific logic 
+        It currently raises an exception because the specific logic
         depends on the type of geometry being defined.
         """
         raise Exception("area() is not implemented")
