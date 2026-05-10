@@ -1,0 +1,48 @@
+The ``BaseGeometry`` class provides a foundation for geometric shapes.
+
+First, initialize the class:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+Verify that area() raises the correct exception:
+    >>> try:
+    ...     bg.area()
+    ... except Exception as e:
+    ...     print(e)
+    area() is not implemented
+
+Verify integer_validator with valid inputs:
+    >>> bg.integer_validator("size", 10)
+    >>> bg.integer_validator("width", 1)
+
+Verify integer_validator raises TypeError for non-integers:
+    >>> try:
+    ...     bg.integer_validator("width", "10")
+    ... except TypeError as e:
+    ...     print(e)
+    width must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("height", [1, 2])
+    ... except TypeError as e:
+    ...     print(e)
+    height must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("weight", 10.5)
+    ... except TypeError as e:
+    ...     print(e)
+    weight must be an integer
+
+Verify integer_validator raises ValueError for values less than or equal to 0:
+    >>> try:
+    ...     bg.integer_validator("depth", 0)
+    ... except ValueError as e:
+    ...     print(e)
+    depth must be greater than 0
+
+    >>> try:
+    ...     bg.integer_validator("distance", -5)
+    ... except ValueError as e:
+    ...     print(e)
+    distance must be greater than 0
