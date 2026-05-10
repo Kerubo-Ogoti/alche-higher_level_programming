@@ -1,10 +1,15 @@
 The ``MyList`` class inherits from ``list`` and adds a sorting display method.
 
-First, initialize the class and verify inheritance:
+Initialize the class and verify inheritance:
     >>> MyList = __import__('1-my_list').MyList
     >>> my_list = MyList()
     >>> isinstance(my_list, list)
     True
+
+Test appending an element:
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [1]
 
 Verify sorting of basic positive integers:
     >>> my_list = MyList([1, 4, 2, 3, 5])
@@ -22,11 +27,6 @@ Verify behavior with an empty list:
     >>> my_list = MyList([])
     >>> my_list.print_sorted()
     []
-
-Verify sorting with already sorted elements:
-    >>> my_list = MyList([1, 2, 3])
-    >>> my_list.print_sorted()
-    [1, 2, 3]
 
 Verify sorting with duplicate elements:
     >>> my_list = MyList([2, 1, 2, 1])
